@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Subscription Plans</title>
+  <!-- <link rel="stylesheet" type="text/css" href="../css/subscription-plan.css"> -->
+  <!-- <script src="../subscription.js"></script> -->
+  <style>
+    /* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Overall Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Subscription Toggle Styles */
+  .subscription-toggle {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .toggle-button {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .toggle-button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Subscription Table Styles */
+  .subscription-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subscription-table th, .subscription-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .subscription-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+  }
+  
+  .subscription-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .price {
+    display: none;
+  }
+  
+  .price.monthly {
+    display: inline;
+  }
+  
+  .price.yearly {
+    display: none;
+  }
+  
+  /* Next Button Styles */
+  .next-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .next-button:hover {
+    background-color: #0056b3;
+  }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Choose a Subscription Plan</h1>
+    <div class="subscription-toggle">
+      <button id="monthly-button" class="toggle-button active" onclick="toggleSubscription('monthly')">Monthly</button>
+      <button id="yearly-button" class="toggle-button" onclick="toggleSubscription('yearly')">Yearly</button>
+    </div>
+    <table class="subscription-table">
+      <tr>
+        <th>Plan</th>
+        <th>Price</th>
+        <th>Video Quality</th>
+        <th>Devices</th>
+        <th>Active Screens</th>
+      </tr>
+      <tr>
+        <td>Basic</td>
+        <td><span class="price monthly">$10<span class="price-type">/month</span></span><span class="price yearly">$100/year</span></td>
+        <td>Good</td>
+        <td>Phone</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Standard</td>
+        <td><span class="price monthly">$20<span class="price-type">/month</span></span><span class="price yearly">$200/year</span></td>
+        <td>Good</td>
+        <td>Phone + Tablet</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Premium</td>
+        <td><span class="price monthly">$30<span class="price-type">/month</span></span><span class="price yearly">$300/year</span></td>
+        <td>Better</td>
+        <td>Phone + Tablet + Computer</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Ultra</td>
+        <td><span class="price monthly">$40<span class="price-type">/month</span></span><span class="price yearly">$400/year</span></td>
+        <td>Best</td>
+        <td>Phone + Tablet + Computer + TV</td>
+        <td>10</td>
+      </tr>
+    </table>
+  </div>
+</body>
+<script>
+  function toggleSubscription(subscriptionType) {
+    const monthlyButton = document.getElementById('monthly-button');
+    const yearlyButton = document.getElementById('yearly-button');
+  
+    if (subscriptionType === 'monthly') {
+      monthlyButton.classList.add('active');
+      yearlyButton.classList.remove('active');
+  
+      const yearlyPrices = document.querySelectorAll('.price.yearly');
+      yearlyPrices.forEach(price => price.style.display = 'none');
+  
+      const monthlyPrices = document.querySelectorAll('.price.monthly');
+      monthlyPrices.forEach(price => price.style.display = 'inline');
+    } else if (subscriptionType === 'yearly') {
+      yearlyButton.classList.add('active');
+      monthlyButton.classList.remove('active');
+  
+      const monthlyPrices = document.querySelectorAll('.price.monthly');
+      monthlyPrices.forEach(price => price.style.display = 'none');
+  
+      const yearlyPrices = document.querySelectorAll('.price.yearly');
+      yearlyPrices.forEach(price => price.style.display = 'inline');
+    }
+  }
+  
+</script>
+</html>

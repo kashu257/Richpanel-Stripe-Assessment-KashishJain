@@ -1,0 +1,88 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Overall Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Styles */
+  .form {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .form h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .form a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  /* Plan Selection Styles */
+  .plan-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .plan {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .plan:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Payment Styles */
+  .payment-form {
+    margin-top: 20px;
+  }
+  
+  .payment-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .payment-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Subscription Details Styles */
+  .subscription-details {
+    margin-top: 20px;
+  }
+  
+  /* Additional Styles and Customizations Go Here */
+  
